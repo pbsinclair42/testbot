@@ -9,7 +9,7 @@
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
 module.exports = (robot) ->
-  robot.respond /"Are you evil?"/, (res) ->
+  robot.hear /are you evil/i, (res) ->
     res.send "No"
   # robot.hear /"Bulbasaur"/i, (res) ->
   #   robot.http("https://pokeapi.co/api/v2/pokemon/1/")
