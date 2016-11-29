@@ -9,7 +9,14 @@
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
 module.exports = (robot) ->
+  robot.hear /"Bulbasaur"/i, (res) ->
+    robot.http("https://pokeapi.co/api/v2/pokemon/1/")
+      .header( 'Accept', 'application/json'
+      .get() (err, res1, body) ->
+        data = JSON.parse body
+          res.send "#{data.name}"
 
+        
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
   #
