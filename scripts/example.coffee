@@ -15,10 +15,10 @@ module.exports = (robot) ->
   robot.hear /are you awake/i, (res) ->
     res.send "No"
 
-  robot.hear /"Bulbasaur"/i, (res) ->
+  robot.hear /Bulbasaur/i, (res) ->
     robot.http("https://pokeapi.co/api/v2/pokemon/1/").get() (err, res1, body) ->
       data = JSON.parse body
-      res.send "#{data.name}"
+      res.send "#{data.weight}"
 
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
