@@ -16,10 +16,9 @@ module.exports = (robot) ->
     res.send "No"
 
   robot.hear /"Bulbasaur"/i, (res) ->
-    robot.http("https://pokeapi.co/api/v2/pokemon/1/")
-      .get() (err, res1, body) ->
-        data = JSON.parse body
-        res.send "#{data.name}"
+    robot.http("https://pokeapi.co/api/v2/pokemon/1/").get() (err, res1, body) ->
+      data = JSON.parse body
+      res.send "#{data.name}"
 
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
